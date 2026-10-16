@@ -12,14 +12,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.astrodash.R
 import com.astrodash.ui.viewmodel.AstroViewModel
@@ -50,7 +48,7 @@ fun getWeatherDesc(code: Int): String {
 }
 
 @Composable
-fun DashboardScreen(viewModel: AstroViewModel = viewModel()) {
+fun DashboardScreen(viewModel: AstroViewModel = AstroViewModel()) {
     val issData by viewModel.issState.collectAsState()
     val kpData by viewModel.kpState.collectAsState()
     val weatherData by viewModel.weatherState.collectAsState()
@@ -341,7 +339,6 @@ fun DashboardScreen(viewModel: AstroViewModel = viewModel()) {
                     }
                 }
 
-                // Corn Store Footer Links with custom corn.jpeg icon
                 item {
                     Spacer(modifier = Modifier.height(8.dp))
                     WidgetCard {
