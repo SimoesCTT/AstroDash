@@ -1,0 +1,24 @@
+# Build output
+/build/
+app/build/
+.gradle/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IDE
+.idea/
+*.iml
+*.hprof
+.DS_Store
+
+# Secrets — never commit these
+*.jks
+*.keystore
+release-key.jks
+keystore.properties
+local.properties
+
+# Signing temp files
+*.apk.idsig
+mapping.txt
